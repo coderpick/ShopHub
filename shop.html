@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - E-commerce Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        .filter-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge bg-danger cart-badge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user"></i> Account
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h1 class="display-4">Shop Our Collection</h1>
+            <p class="lead">Browse through our wide range of products</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 mb-4">
+                    <div class="filter-section">
+                        <h5 class="mb-3">Categories</h5>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="clothing">
+                            <label class="form-check-label" for="clothing">Clothing</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="electronics">
+                            <label class="form-check-label" for="electronics">Electronics</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="home">
+                            <label class="form-check-label" for="home">Home & Living</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="accessories">
+                            <label class="form-check-label" for="accessories">Accessories</label>
+                        </div>
+                        <hr>
+                        <h5 class="mb-3">Price Range</h5>
+                        <div class="mb-3">
+                            <label for="priceRange" class="form-label">Max Price: $500</label>
+                            <input type="range" class="form-range" id="priceRange" min="0" max="500">
+                        </div>
+                        <hr>
+                        <h5 class="mb-3">Rating</h5>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="rating5">
+                            <label class="form-check-label" for="rating5">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="rating4">
+                            <label class="form-check-label" for="rating4">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                & up
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0 text-muted">Showing 12 products</p>
+                        <select class="form-select w-auto">
+                            <option>Sort by: Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                        </select>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Product 1 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Classic T-Shirt">
+                                <div class="card-body">
+                                    <h6 class="card-title">Classic T-Shirt</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(45)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$29.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Wireless Headphones">
+                                <div class="card-body">
+                                    <h6 class="card-title">Wireless Headphones</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="text-muted">(32)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$149.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Modern Lamp">
+                                <div class="card-body">
+                                    <h6 class="card-title">Modern Lamp</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(28)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$79.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Smart Watch">
+                                <div class="card-body">
+                                    <h6 class="card-title">Smart Watch</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(67)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$299.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Sneakers">
+                                <div class="card-body">
+                                    <h6 class="card-title">Sports Sneakers</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="text-muted">(52)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$89.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Backpack">
+                                <div class="card-body">
+                                    <h6 class="card-title">Travel Backpack</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(38)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$59.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Sunglasses">
+                                <div class="card-body">
+                                    <h6 class="card-title">Designer Sunglasses</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="text-muted">(41)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$129.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Laptop">
+                                <div class="card-body">
+                                    <h6 class="card-title">Gaming Laptop</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(89)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$1,299.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Coffee Maker">
+                                <div class="card-body">
+                                    <h6 class="card-title">Coffee Maker</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="text-muted">(36)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$49.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/610945/pexels-photo-610945.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Watch">
+                                <div class="card-body">
+                                    <h6 class="card-title">Luxury Watch</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(74)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$399.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Hoodie">
+                                <div class="card-body">
+                                    <h6 class="card-title">Cozy Hoodie</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <small class="text-muted">(43)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$45.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="col-md-4">
+                            <div class="card product-card">
+                                <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Plant">
+                                <div class="card-body">
+                                    <h6 class="card-title">Indoor Plant</h6>
+                                    <div class="mb-2">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <small class="text-muted">(56)</small>
+                                    </div>
+                                    <p class="card-text fw-bold">$24.99</p>
+                                    <button class="btn btn-primary w-100 btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ShopHub</h5>
+                    <p class="text-muted">Your one-stop shop for everything</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center text-muted mb-0">&copy; 2024 ShopHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

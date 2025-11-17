@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - E-commerce Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .quantity-input {
+            width: 80px;
+        }
+        .summary-card {
+            position: sticky;
+            top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="badge bg-danger cart-badge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user"></i> Account
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-light py-4">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+                </ol>
+            </nav>
+            <h1 class="mt-3">Shopping Cart</h1>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Cart Items -->
+                <div class="col-lg-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Cart Items (3)</h5>
+                            
+                            <!-- Cart Item 1 -->
+                            <div class="row align-items-center border-bottom pb-3 mb-3">
+                                <div class="col-md-2">
+                                    <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=600" class="cart-item-img" alt="Wireless Headphones">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Wireless Headphones</h6>
+                                    <p class="text-muted mb-0 small">Premium sound quality</p>
+                                    <p class="text-muted mb-0 small">Color: Black</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="small text-muted">Quantity</label>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <p class="fw-bold mb-0">$149.99</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="row align-items-center border-bottom pb-3 mb-3">
+                                <div class="col-md-2">
+                                    <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=600" class="cart-item-img" alt="Smart Watch">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Smart Watch</h6>
+                                    <p class="text-muted mb-0 small">Fitness tracking enabled</p>
+                                    <p class="text-muted mb-0 small">Color: Silver</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="small text-muted">Quantity</label>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <p class="fw-bold mb-0">$299.99</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 3 -->
+                            <div class="row align-items-center pb-3">
+                                <div class="col-md-2">
+                                    <img src="https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=600" class="cart-item-img" alt="Classic T-Shirt">
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="mb-1">Classic T-Shirt</h6>
+                                    <p class="text-muted mb-0 small">100% Cotton</p>
+                                    <p class="text-muted mb-0 small">Size: Medium</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="small text-muted">Quantity</label>
+                                    <input type="number" class="form-control quantity-input" value="2" min="1">
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <p class="fw-bold mb-0">$59.98</p>
+                                    <p class="text-muted small mb-0">$29.99 each</p>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon Code -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="mb-3">Have a Coupon Code?</h6>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter coupon code">
+                                <button class="btn btn-outline-secondary">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <a href="shop.html" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                    </a>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="col-lg-4">
+                    <div class="card summary-card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Order Summary</h5>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal (4 items)</span>
+                                <span>$509.96</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Shipping</span>
+                                <span class="text-success">Free</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tax</span>
+                                <span>$40.80</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-success">Discount</span>
+                                <span class="text-success">-$0.00</span>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="d-flex justify-content-between mb-4">
+                                <span class="fw-bold">Total</span>
+                                <span class="fw-bold h5">$550.76</span>
+                            </div>
+
+                            <a href="checkout.html" class="btn btn-primary w-100 mb-3">
+                                Proceed to Checkout
+                            </a>
+
+                            <div class="text-center">
+                                <small class="text-muted">
+                                    <i class="fas fa-lock me-1"></i>Secure Checkout
+                                </small>
+                            </div>
+
+                            <!-- Trust Badges -->
+                            <div class="mt-4 pt-3 border-top">
+                                <h6 class="small mb-3">We Accept</h6>
+                                <div class="d-flex gap-2">
+                                    <i class="fab fa-cc-visa fa-2x text-muted"></i>
+                                    <i class="fab fa-cc-mastercard fa-2x text-muted"></i>
+                                    <i class="fab fa-cc-amex fa-2x text-muted"></i>
+                                    <i class="fab fa-cc-paypal fa-2x text-muted"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Free Shipping Notice -->
+                    <div class="alert alert-success mt-3" role="alert">
+                        <i class="fas fa-truck me-2"></i>
+                        <strong>Free Shipping!</strong> Your order qualifies for free delivery.
+                    </div>
+                </div>
+            </div>
+
+            <!-- You May Also Like -->
+            <div class="mt-5">
+                <h3 class="mb-4">You May Also Like</h3>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Sneakers" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Sports Sneakers</h6>
+                                <p class="card-text fw-bold">$89.99</p>
+                                <button class="btn btn-sm btn-outline-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Backpack" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Travel Backpack</h6>
+                                <p class="card-text fw-bold">$59.99</p>
+                                <button class="btn btn-sm btn-outline-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Sunglasses" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Designer Sunglasses</h6>
+                                <p class="card-text fw-bold">$129.99</p>
+                                <button class="btn btn-sm btn-outline-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/610945/pexels-photo-610945.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Watch" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">Luxury Watch</h6>
+                                <p class="card-text fw-bold">$399.99</p>
+                                <button class="btn btn-sm btn-outline-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ShopHub</h5>
+                    <p class="text-muted">Your one-stop shop for everything</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center text-muted mb-0">&copy; 2024 ShopHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
