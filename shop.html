@@ -37,31 +37,50 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+                <i class="fas fa-shopping-bag me-2 text-primary"></i><span class="fw-bold">ShopHub</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group mx-auto" style="max-width: 500px;">
+                    <input type="text" class="form-control" placeholder="Search for products...">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="shop.html">Clothing</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Electronics</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Home & Living</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="shop.html">Shop</a>
+                        <a class="nav-link" href="#">Deals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="badge bg-danger cart-badge">3</span>
+                        <a class="nav-link" href="#">What's New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Delivery</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="auth.html">
+                            <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-user"></i> Account
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-danger cart-badge">3</span>
                         </a>
                     </li>
                 </ul>

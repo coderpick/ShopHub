@@ -6,6 +6,8 @@
     <title>Home - E-commerce Store</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -37,31 +39,50 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-shopping-bag me-2"></i>ShopHub
+                <i class="fas fa-shopping-bag me-2 text-primary"></i><span class="fw-bold">ShopHub</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group mx-auto" style="max-width: 500px;">
+                    <input type="text" class="form-control" placeholder="Search for products...">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="shop.html">Clothing</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Electronics</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Home & Living</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
+                        <a class="nav-link" href="#">Deals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cart.html">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            <span class="badge bg-danger cart-badge">3</span>
+                        <a class="nav-link" href="#">What's New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Delivery</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="auth.html">
+                            <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-user"></i> Account
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-danger cart-badge">3</span>
                         </a>
                     </li>
                 </ul>
@@ -71,10 +92,46 @@
 
     <!-- Hero Section -->
     <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Welcome to ShopHub</h1>
-            <p class="lead mb-4">Discover amazing products at unbeatable prices</p>
-            <a href="shop.html" class="btn btn-light btn-lg px-5">Shop Now</a>
+        <div id="productPromoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#productPromoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#productPromoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#productPromoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="Promotion 1" style="height: 500px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                        <h5>Wireless Headphones - 20% Off!</h5>
+                        <p>Experience immersive sound with our latest headphones. Limited time offer!</p>
+                        <a href="shop.html" class="btn btn-light">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="Promotion 2" style="height: 500px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                        <h5>Smart Watches - Buy One Get One 50% Off!</h5>
+                        <p>Stay connected and track your fitness goals. Grab yours today!</p>
+                        <a href="shop.html" class="btn btn-light">View Collection</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="Promotion 3" style="height: 500px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                        <h5>Summer Apparel Sale - Up to 50% Off!</h5>
+                        <p>Refresh your wardrobe with our stylish and comfortable summer collection.</p>
+                        <a href="shop.html" class="btn btn-light">Explore Deals</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productPromoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productPromoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
@@ -186,6 +243,118 @@
         </div>
     </section>
 
+    <!-- Product Ads Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                        <img src="https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img" alt="Product Ad 1" style="height: 300px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50">
+                            <h5 class="card-title display-6 fw-bold">New Arrivals</h5>
+                            <p class="card-text lead">Discover the latest trends</p>
+                            <a href="shop.html" class="btn btn-light">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                        <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img" alt="Product Ad 2" style="height: 300px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50">
+                            <h5 class="card-title display-6 fw-bold">Limited Time Offers</h5>
+                            <p class="card-text lead">Don't miss out on great deals</p>
+                            <a href="shop.html" class="btn btn-light">View Deals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Products</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Classic T-Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic T-Shirt</h5>
+                            <p class="card-text text-muted">$29.99</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Wireless Headphones">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireless Headphones</h5>
+                            <p class="card-text text-muted">$149.99</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Modern Lamp">
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Lamp</h5>
+                            <p class="card-text text-muted">$79.99</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Smart Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Watch</h5>
+                            <p class="card-text text-muted">$299.99</p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Carousel -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Brands</h2>
+            <div class="owl-carousel owl-theme">
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+1" alt="Brand 1"></div>
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+2" alt="Brand 2"></div>
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+3" alt="Brand 3"></div>
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+4" alt="Brand 4"></div>
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+5" alt="Brand 5"></div>
+                <div class="item"><img src="https://via.placeholder.com/150x80?text=Brand+6" alt="Brand 6"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Newsletter -->
     <section class="py-5 bg-dark text-white">
         <div class="container">
@@ -234,6 +403,28 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:2
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
