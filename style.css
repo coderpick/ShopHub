@@ -1,0 +1,53 @@
+body {
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.quantity-input {
+  width: 80px;
+}
+.summary-card {
+  position: sticky;
+  top: 80px;
+}
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 0;
+}
+.product-card {
+  transition: transform 0.3s;
+  height: 100%;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.product-card img {
+  height: 250px;
+  object-fit: cover;
+}
+.filter-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
